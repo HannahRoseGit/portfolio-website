@@ -8,6 +8,44 @@ body {
 }
 
 .content {
-    text-align: center; 
-    margin-top: 50px; 
+    position: relative; /* Position relative for absolute positioning of child elements */
+    text-align: center; /* Center text in the content */
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.center-content {
+    margin: 0 auto; /* Center the content horizontally */
+    position: relative; /* Position relative to allow absolute positioning of the diagonal text */
+}
+
+.preview-image {
+    width: 60%; /* Adjust size of the image */
+    height: auto; /* Keep aspect ratio */
+    border-radius: 15px; /* Adjust this value for rounded corners */
+    border: none; /* Add purple border around the image */
+    box-shadow: 0 0 10px rgba(122, 4, 235, 0.5); /* Add subtle purple glow */
+    margin-top: 20px; /* Add spacing between the text and image */
+}
+
+#main-heading {
+    margin-top: 5%;
+}
+
+#diagonal-text {
+    font-size: 24px; 
+    font-weight: normal; 
+    color: #7a04eb; 
+    transform: rotate(30deg); 
+    display: inline-block; 
+    position: absolute; 
+    top: 10%; 
+    left: 65%; 
+    z-index: 1; 
+    pointer-events: none;
+    font-family: "Nanum Pen Script", cursive;
+}
+
+.contact {
+    position: relative;
+    text-align: center;
 }
