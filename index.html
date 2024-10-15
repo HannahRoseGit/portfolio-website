@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
     <title>My Portfolio</title>
     <link rel="stylesheet" href="css/navbar.css"> 
     <link rel="stylesheet" href="css/main.css">
+
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet"></noscript>
     
@@ -23,15 +28,57 @@
         </ul>
     </nav>
     <div class="content">
-        <div class="center-content">
-            <h1 id="main-heading">Hi! My name is Rozhan Hannah Asadi.</h1>
-            <h1 id="second-heading">Welcome to my website!</h1>
-            <img src="./assets/preview-image.png" alt="3D Preview Image" class="preview-image">
+        <div class="headings">
+            <h1 id="main-heading">Hello! This is </h1>
+            <h2 id="second-heading">R. Hannah Asadi</h2>
         </div>
-        <h2 id="diagonal-text">You can just call me Hannah</h2>
-    </div>
-    <div class="contact">
-        <h1 id="contact">Contact me with</h1>
+        
+        <div class="blob-container">
+            <img src="./assets/blob-haikei.png" alt="Blob1" class="Blob1">
+            <img src="./assets/blob-overlay.png" alt="blob-overlay" class="blob-overlay">
+        </div>
+        
+
+        <div class="intro">
+            <h1>I'm a ...</h1>
+            <div class="adjectives">    
+                <h1 id="softwar-en">Software Engineer</h1>
+                <h1 id="backend">backend Developer</h1>
+                <h1 id="data">Data Analyst</h1>
+                <h1 id="ml">ML enthusiast</h1>
+                <h1 id="team">Team Contributor</h1>
+                <h1 id="problem">Problem Solver</h1>
+            </div>
+        </div>
+
+        <div class="preview-container">
+            <img src="./assets/preview-image.png" alt="3D Preview Image" class="preview-image">
+            <a href="pages/projects.html"> <!--TODO: change this page to the game simulation page! -->
+                <button class="preview-button">Click me to enter</button>
+            </a>
+        </div>
+        
+
+        <div class="contact-container">
+            <h1 id="contact">Contact me with</h1>
+            <div class="icons">
+
+                <div class="mail-tool">
+                    <img src="./assets/icons/email.png" alt="email" class="email">
+                    <span class="mail-text">rozhan.asadi@mirado.com</span>
+                </div>
+
+                <a href="https://se.linkedin.com/in/rozhan-asadi-95517a150" target="_blank" class="linkedin-tool">
+                    <img src="./assets/icons/linkedin.png" alt="linkedin" class="linkedin">
+                    <span class="linkedin-text">Rozhan Asadi</span>
+                </a>
+                
+                <div class="phone-tool">
+                    <img src="./assets/icons/phone-call.png" alt="phone" class="phone">
+                    <span class="phone-text">+46 769700980</span>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

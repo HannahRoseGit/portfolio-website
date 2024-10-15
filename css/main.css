@@ -1,51 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+}
 
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Lora", serif;
     background-color: black; 
     color: white; 
 }
 
-.content {
-    position: relative; /* Position relative for absolute positioning of child elements */
-    text-align: center; /* Center text in the content */
-    padding: 20px; /* Optional: Add padding for spacing */
+html, body {
+    height: 100%; /* Ensure full height */
+    width: 100%; /* Ensure full width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;
 }
 
-.center-content {
-    margin: 0 auto; /* Center the content horizontally */
-    position: relative; /* Position relative to allow absolute positioning of the diagonal text */
+.headings {
+    display: inline-block;
+    margin-left: 10%;
+    position: relative;
+    text-align: left;
+    font-weight: normal;
+    font-size: 200%;
+    margin-top: 10%;
+}
+
+
+.preview-container {
+    position: relative; 
+    display: inline-block;  
 }
 
 .preview-image {
-    width: 60%; /* Adjust size of the image */
-    height: auto; /* Keep aspect ratio */
-    border-radius: 15px; /* Adjust this value for rounded corners */
-    border: none; /* Add purple border around the image */
-    box-shadow: 0 0 10px rgba(122, 4, 235, 0.5); /* Add subtle purple glow */
-    margin-top: 20px; /* Add spacing between the text and image */
+    display: block; 
+    height: auto; 
+    border-radius: 15px; 
+    border: none; 
+    box-shadow: 0 0 10px rgba(122, 4, 235, 0.5); 
+    margin: 20% auto; 
+    filter: blur(4px);
+    margin-left: 25%;
+}
+
+.preview-button {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #FF9B71; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-left: 25%;
 }
 
 #main-heading {
     margin-top: 5%;
+    overflow: hidden;
+    white-space: nowrap; /* Prevents text from wrapping */
+    /* border-right: 2px solid; Creates the cursor effect */
+    /* animation: typing 2s steps(14) forwards, hideCursor 0.1s forwards 2s; */
 }
 
-#diagonal-text {
-    font-size: 24px; 
-    font-weight: normal; 
-    color: #7a04eb; 
-    transform: rotate(30deg); 
-    display: inline-block; 
-    position: absolute; 
-    top: 10%; 
-    left: 65%; 
-    z-index: 1; 
-    pointer-events: none;
-    font-family: "Nanum Pen Script", cursive;
+#second-heading {
+    overflow: hidden;
+    font-size: 250%;
+    color: #FF9B71;
+    white-space: nowrap; /* Prevents text from wrapping */
+    border-right: 2px solid; /* Creates the cursor effect */
+    opacity: 0; /* Make the second heading invisible initially */
+    
+    /* Animation sequence */
+    animation: showText 0s forwards, 
+               typing 2s steps(15) forwards 0.2s, 
+               blinkCursor 0.5s steps(1) infinite 2.2s, /* Blink during typing */
+               hideCursor 0.5s forwards 3.4s; /* Hide after typing */
 }
 
-.contact {
+@keyframes showText {
+    to {
+        opacity: 1; /* Make the text visible */
+    }
+}
+
+@keyframes typing {
+    from { width: 0; } 
+    to { width: 100%; } /* Expands to the full width of the content */
+}
+
+@keyframes blinkCursor {
+    0%, 100% {
+        border-right: 2px solid; /* Show cursor */
+    }
+    50% {
+        border-right: transparent; /* Hide cursor */
+    }
+}
+
+@keyframes hideCursor {
+    to {
+        border-right: none; /* Hide cursor after typing */
+    }
+}
+
+.intro{
+    text-align: left;
+    margin-left: 10%;
+}
+
+.adjectives h1 {
+    margin-left: 5%;
     position: relative;
+    overflow: hidden;
+    opacity: 0; /* Initially hidden */
+    display: block;
+    line-height: 1.2;
+    color: #FFFD82;
+    width: 25%;
+    animation: fadeIn 4s forwards 4s; /* Apply fadeIn animation to h1 */
+}
+
+/* Set staggered animation delays for each h1 element */
+.adjectives h1:nth-of-type(1) {
+    animation-delay: 1s;
+}
+
+.adjectives h1:nth-of-type(2) {
+    animation-delay: 1.5s;
+}
+
+.adjectives h1:nth-of-type(3) {
+    animation-delay: 2s;
+}
+
+.adjectives h1:nth-of-type(4) {
+    animation-delay: 2.5s;
+}
+
+.adjectives h1:nth-of-type(5) {
+    animation-delay: 3s;
+}
+
+.adjectives h1:nth-of-type(6) {
+    animation-delay: 3.5s;
+}
+
+.adjectives h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFD82;
+    animation: a-ltr-after 2s cubic-bezier(.77, 0, .18, 1) forwards;
+    transform: translateX(-101%);
+}
+
+.adjectives h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: a-ltr-before 2s cubic-bezier(.77, 0, .18, 1) forwards;
+    transform: translateX(0);
+}
+
+/* Staggered animation delays for pseudo-elements */
+.adjectives h1:nth-of-type(1)::before,
+.adjectives h1:nth-of-type(1)::after {
+    animation-delay: 1s;
+}
+
+.adjectives h1:nth-of-type(2)::before,
+.adjectives h1:nth-of-type(2)::after {
+    animation-delay: 1.5s;
+}
+
+.adjectives h1:nth-of-type(3)::before,
+.adjectives h1:nth-of-type(3)::after {
+    animation-delay: 2s;
+}
+
+.adjectives h1:nth-of-type(4)::before,
+.adjectives h1:nth-of-type(4)::after {
+    animation-delay: 2.5s;
+}
+
+.adjectives h1:nth-of-type(5)::before,
+.adjectives h1:nth-of-type(5)::after {
+    animation-delay: 3s;
+}
+
+.adjectives h1:nth-of-type(6)::before,
+.adjectives h1:nth-of-type(6)::after {
+    animation-delay: 3.5s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes a-ltr-after {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(101%); }
+}
+
+@keyframes a-ltr-before {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(200%); }
+}
+
+
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Arrange text and icons in a vertical stack */
+    align-items: center; /* Center items horizontally */
+    margin-top: 5px;
+    margin-bottom: 5%;
+}
+
+.icons {
+    display: flex; /* Arrange the icons in a row */
+    gap: 15px; /* Space between each icon */
+    margin-top: 10px; /* Space between the text and the icons */
+}
+
+.icons img {
+    width: 30px; /* Adjust the size of the icons */
+    height: auto; /* Maintain aspect ratio */
+    filter: invert(1); /* Make the icons white */
+    transition: transform 0.3s; /* Add a smooth transition effect */
+}
+
+.icons img:hover {
+    transform: scale(1.2); /* Enlarge the icon on hover */
+    filter: invert(36%) sepia(100%) saturate(7443%) hue-rotate(246deg) brightness(96%) contrast(107%);
+}
+
+.mail-tool {
+    position: relative;
+    display: inline-block;
+}
+
+.mail-text{
+    visibility: hidden; /* Initially hide the tooltip text */
+    background-color: #555; /* Background color of the tooltip */
+    color: #fff; /* Text color */
     text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 100%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0; /* Make it invisible initially */
+    transition: opacity 0.3s; 
+}
+
+.mail-tool:hover .mail-text{
+    visibility: visible;
+    opacity: 1;
+}
+
+.linkedin-tool {
+    position: relative; 
+}
+
+.linkedin-text {
+    visibility: hidden; /* Initially hide the tooltip text */
+    background-color: #555; /* Background color of the tooltip */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 100%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0; /* Make it invisible initially */
+    transition: opacity 0.3s; 
+}
+
+.linkedin-tool:hover .linkedin-text{
+    visibility: visible;
+    opacity: 1;
+}
+
+.phone-tool {
+    position: relative;
+    display: inline-block;
+}
+
+.phone-text{
+    visibility: hidden; /* Initially hide the tooltip text */
+    background-color: #555; /* Background color of the tooltip */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 100%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0; /* Make it invisible initially */
+    transition: opacity 0.3s; 
+}
+
+.phone-tool:hover .phone-text{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.blob-container {
+    position: relative; 
+    display: inline-block;  
+    margin-left: 40%;
+    width: 70%;
+}
+
+.Blob1 {
+    height: auto;
+}
+
+.blob-overlay {
+    top: 50%; 
+    left: 50%;
+    position: absolute; 
+    transform: translate(-50%, -50%); 
+    height: auto;
 }
