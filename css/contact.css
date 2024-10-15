@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+}
+
+body {
+    font-family: "Lora", serif;
+    background-color: black; 
+    color: white; 
+}
+
+html, body {
+    height: 100%; /* Ensure full height */
+    width: 100%; /* Ensure full width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;
+}
+
+.headings {
+    text-align: center; /* Center the text within the container */
+    font-weight: normal;
+    font-size: 2rem; /* Adjust as needed */
+    margin: 20px 0; /* Add some margin to create space around the heading */
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* Ensure the content is laid out in a vertical stack */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    min-height: 80vh; /* Ensure the content has some height to center itself within the viewport */
+}

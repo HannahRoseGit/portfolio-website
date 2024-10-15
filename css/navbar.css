@@ -51,3 +51,107 @@
     left: 50%; /* Position it in the center */
     bottom: 0; /* Position it at the bottom of the link */
 }
+
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Arrange text and icons in a vertical stack */
+    align-items: center; 
+    margin-top: 5px;
+    margin-bottom: 5%;
+}
+
+.icons {
+    align-items: center;
+    display: flex; /* Arrange the icons in a row */
+    gap: 15px; /* Space between each icon */
+    margin-top: 10px; /* Space between the text and the icons */
+}
+
+.icons img {
+    width: 30px; /* Adjust the size of the icons */
+    height: auto; /* Maintain aspect ratio */
+    filter: invert(1); /* Make the icons white */
+    transition: transform 0.3s; /* Add a smooth transition effect */
+}
+
+.icons img:hover {
+    transform: scale(1.2); /* Enlarge the icon on hover */
+    filter: invert(36%) sepia(100%) saturate(7443%) hue-rotate(246deg) brightness(96%) contrast(107%);
+}
+
+.mail-tool {
+    position: relative;
+    display: inline-block;
+}
+
+.mail-text{
+    visibility: hidden; /* Initially hide the tooltip text */
+    background-color: #555; /* Background color of the tooltip */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 100%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0; /* Make it invisible initially */
+    transition: opacity 0.3s; 
+}
+
+.mail-tool:hover .mail-text{
+    visibility: visible;
+    opacity: 1;
+}
+
+.linkedin-tool {
+    position: relative; 
+}
+
+.linkedin-text {
+    visibility: hidden; /* Initially hide the tooltip text */
+    background-color: #555; /* Background color of the tooltip */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 100%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0; /* Make it invisible initially */
+    transition: opacity 0.3s; 
+}
+
+.linkedin-tool:hover .linkedin-text{
+    visibility: visible;
+    opacity: 1;
+}
+
+.phone-tool {
+    position: relative;
+    display: inline-block;
+}
+
+.phone-text{
+    visibility: hidden; /* Initially hide the tooltip text */
+    background-color: #555; /* Background color of the tooltip */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 100%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0; /* Make it invisible initially */
+    transition: opacity 0.3s; 
+}
+
+.phone-tool:hover .phone-text{
+    visibility: visible;
+    opacity: 1;
+}
