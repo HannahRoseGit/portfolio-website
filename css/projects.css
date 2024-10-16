@@ -31,3 +31,96 @@ html, body {
     align-items: center; /* Center the content horizontally */
     min-height: 80vh; /* Ensure the content has some height to center itself within the viewport */
 }
+
+.heading-container{
+    display: flex;
+    justify-content: center;
+    display: inline-block; 
+    text-align: center;
+    margin-top: 5%;
+}
+
+#heading-text {
+    overflow: hidden;
+    color: #FF9B71;
+    white-space: nowrap; /* Prevents text from wrapping */
+    border-right: 2px solid; /* Creates the cursor effect */
+    opacity: 0; /* Make the second heading invisible initially */
+    
+    /* Animation sequence */
+    animation: showText 0s forwards, 
+               typing 2s steps(18) forwards 0.2s, 
+               blinkCursor 0.5s steps(1) infinite 2.2s, /* Blink during typing */
+               hideCursor 0.5s forwards 4s; /* Hide after typing */
+}
+
+@keyframes showText {
+    to {
+        opacity: 1; /* Make the text visible */
+    }
+}
+
+@keyframes typing {
+    from { width: 0; } 
+    to { width: 100%; } /* Expands to the full width of the content */
+}
+
+@keyframes blinkCursor {
+    0%, 100% {
+        border-right: 2px solid; /* Show cursor */
+    }
+    50% {
+        border-right: transparent; /* Hide cursor */
+    }
+}
+  
+@keyframes hideCursor {
+    to {
+        border-right: none; /* Hide cursor after typing */
+    }
+}
+
+.project1 {
+    justify-content: left;
+    width: 80%;
+    margin-top: 5%;
+    padding: 5%;
+    border-radius: 15px;
+    border: 2px solid #7a04eb;
+}
+
+.project2 {
+    text-align: right;
+    width: 80%;
+    margin-top: 5%;
+    padding: 5%;
+    border-radius: 15px;
+    border: 2px solid #7a04eb;
+}
+
+.project3 {
+    justify-content: left;
+    width: 80%;
+    margin-top: 5%;
+    padding: 5%;
+    border-radius: 15px;
+    border: 2px solid #7a04eb;
+}
+
+.project4 {
+    text-align: right;
+    width: 80%;
+    margin-top: 5%;
+    padding: 5%;
+    border-radius: 15px;
+    border: 2px solid #7a04eb;
+}
+
+.project5 {
+    justify-content: left;
+    width: 80%;
+    margin-top: 5%;
+    padding: 5%;
+    border-radius: 15px;
+    border: 2px solid #7a04eb;
+}
