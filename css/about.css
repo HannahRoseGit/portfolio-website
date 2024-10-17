@@ -31,3 +31,12 @@ html, body {
     align-items: center; /* Center the content horizontally */
     min-height: 80vh; /* Ensure the content has some height to center itself within the viewport */
 }
+
+.about {
+    justify-content: left;
+    width: 80%;
+    margin-top: 5%;
+    padding: 5%;
+    border-radius: 15px;
+    border: 2px solid #7a04eb;
+}
