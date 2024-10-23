@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+    box-sizing: border-box; 
 }
 
 body {
@@ -11,23 +11,88 @@ body {
 }
 
 html, body {
-    height: 100%; /* Ensure full height */
-    width: 100%; /* Ensure full width */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 100%; 
+    width: 100%; 
+    overflow-x: hidden; 
     overflow-y: auto;
 }
 
 .headings {
-    text-align: center; /* Center the text within the container */
+    text-align: center; 
     font-weight: normal;
-    font-size: 2rem; /* Adjust as needed */
-    margin: 20px 0; /* Add some margin to create space around the heading */
+    font-size: 2rem; 
+    margin: 20px 0; 
 }
 
 .content {
     display: flex;
-    flex-direction: column; /* Ensure the content is laid out in a vertical stack */
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
-    min-height: 80vh; /* Ensure the content has some height to center itself within the viewport */
+    flex-direction: row;     
+    justify-content: center; 
+    align-items: center; 
+    min-height: 80vh; 
+}
+
+.text{
+    text-align: left;
+    margin-right: 20%;
+}
+
+.contact-card {
+    position: relative;
+    background-color: #222;
+    border: 2px solid #FF9B71;
+    border-radius: 10px;
+    padding: 20px;
+    width: 25%;
+    text-align: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+.contact-card:hover {
+    box-shadow: 1px 1px 25px 10px #FF9B71;
+}
+
+.contact-card:before{
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%; 
+    width: 120%;
+    height: 150%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 156, 113, 0) 0%,
+        rgba(255, 156, 113, 0) 30%,
+        rgba(252, 122, 67, 0.31) 50%,
+        rgba(255, 156, 113, 0) 60%,
+        rgba(255, 155, 113, 0) 100%
+    );
+    transition: left 800ms ease-in-out, top 800ms ease-in-out;
+}
+
+.contact-card:hover:before{
+    left: 100%;
+    top: 100%;
+}
+
+.profile-pic {
+    width: 60%; 
+    height: 50%;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 15px;
+}
+
+.icons {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px; 
+}
+
+.icons img {
+    width: 30px;
+    height: auto;
 }
