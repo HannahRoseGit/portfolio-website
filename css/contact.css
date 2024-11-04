@@ -34,7 +34,18 @@ html, body {
 
 .text{
     text-align: left;
-    margin-right: 20%;
+    margin-right: 10%;
+    width: 40%;
+}
+
+.gradient-box {
+    position: absolute; /* Allows control of exact placement */
+    top: 0; /* Start the gradient box at the top of the preview container */
+    left: 0;
+    width: 100%; /* Full width of the preview container */
+    height: 100%; /* Adjust this value for the gradient height */
+    z-index: -1; /* Behind the preview container content */
+    background: linear-gradient(to top, rgba(122, 4, 235, 0.3) 20%, rgba(255, 122, 80, 0) 80%);
 }
 
 .contact-card {
@@ -68,7 +79,7 @@ html, body {
         rgba(255, 156, 113, 0) 60%,
         rgba(255, 155, 113, 0) 100%
     );
-    transition: left 800ms ease-in-out, top 800ms ease-in-out;
+    transition: left 600ms ease-in-out, top 600ms ease-in-out;
 }
 
 .contact-card:hover:before{
